@@ -6,15 +6,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>POS</h1>
+    <h1>Simple POS System</h1>
 
-    <div id="products"></div>
+    <!-- Tab buttons -->
+    <div>
+        <button onclick="showTab('checkoutTab')">Checkout</button>
+        <button onclick="showTab('inventoryTab')">Edit Inventory</button>
+    </div>
 
-    <h2>Cart</h2>
-    <ul id="cart"></ul>
+    <!-- Checkout tab -->
+    <div id="checkoutTab">
+        <h2>Products</h2>
+        <div id="products"></div>
 
-    <h3>Total: $<span id="total">0.00</span></h3>
-    <button onclick="checkout()">Checkout</button>
+        <h2>Cart</h2>
+        <ul id="cart"></ul>
+
+        <h3>Total: P<span id="total">0.00</span></h3>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Inventory tab -->
+    <div id="inventoryTab" style="display:none;">
+        <h2>Manage Inventory</h2>
+        <ul id="inventoryList"></ul>
+
+        <h3>Add New Product</h3>
+        <label for="newProductName"></label><input id="newProductName" placeholder="Product Name">
+        <label for="newProductPrice"></label><input id="newProductPrice" placeholder="Product Price" type="number" step="0.25">
+        <button onclick="addProduct()">Add Product</button>
+    </div>
 
     <script src="JavaScripts/index.js"></script>
 </body>
